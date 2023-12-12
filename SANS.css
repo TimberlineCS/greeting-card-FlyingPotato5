@@ -3,6 +3,6 @@
     src: url(Fonts/COMIC.TTF);
   }
 
-body {
+#coolfont {
     font-family: Comic;
     }
