@@ -21,19 +21,23 @@ text.style.fontSize = "3em";
 text.style.textAlign = "center";
 
 document.body.style.backgroundColor  = "#77d7f2";
+document.body.style.height = "100%";
+document.documentElement.style.height = "100%";
 
-background.style.width = "60%";//stretches the div but keeps it in bounds on the
+background.style.width = "60%";
+background.style.height = "100%";
 background.style.padding = "20%";//creates
 
-snowyBackground.style.width = "100%";
-snowyBackground.style.height = "30%";
+snowyBackground.style.width = "163%";
+snowyBackground.style.height = "0%";
 snowyBackground.style.backgroundColor = "#FFF";
 snowyBackground.style.outline = "5px";
 snowyBackground.style.outlineColor = "gray";
-snowyBackground.style.top = "40%";
+snowyBackground.style.outlineStyle = "solid";
 snowyBackground.style.position = "relative";
 snowyBackground.style.padding = "1%";
 snowyBackground.style.zIndex = 2;
+snowyBackground.style.marginLeft = "-32%";
 
 document.body.append(text);
 document.body.append(background);
