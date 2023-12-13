@@ -13,6 +13,8 @@ must also include text, an image, and music. */
 var text = document.createElement("div");
 var background = document.createElement("div");
 var snowyBackground =  document.createElement("div");
+var snowGIF = document.createElement("img");
+
 text.id = "coolfont";
 text.innerHTML = "Have a Snowy Christmas!";
 text.style.backgroundColor = "black"
@@ -29,17 +31,28 @@ background.style.height = "100%";
 background.style.padding = "20%";//creates
 
 snowyBackground.style.width = "163%";
-snowyBackground.style.height = "0%";
+snowyBackground.style.height = "40%";
 snowyBackground.style.backgroundColor = "#FFF";
 snowyBackground.style.outline = "5px";
 snowyBackground.style.outlineColor = "gray";
 snowyBackground.style.outlineStyle = "solid";
 snowyBackground.style.position = "relative";
+snowyBackground.style.translate = "0% -130%";
+
 snowyBackground.style.padding = "1%";
 snowyBackground.style.zIndex = 2;
 snowyBackground.style.marginLeft = "-32%";
 
+snowGIF.src = "Images/FallingSnowTransparent.gif";
+snowGIF.style.height = "100%";
+snowGIF.style.width = "163%";
+snowGIF.style.position = "relative";
+snowGIF.style.zIndex = 3;
+snowGIF.style.marginLeft = "-32%";
+snowGIF.style.marginTop = "-35%";
+
 document.body.append(text);
 document.body.append(background);
+background.append(snowGIF);
 background.append(snowyBackground);
 
