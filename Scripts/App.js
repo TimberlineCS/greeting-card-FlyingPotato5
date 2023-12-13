@@ -14,6 +14,7 @@ var text = document.createElement("div");
 var background = document.createElement("div");
 var snowyBackground =  document.createElement("div");
 var snowGIF = document.createElement("img");
+var noelle = document.createElement("img");
 
 text.id = "coolfont";
 text.innerHTML = "Have a Snowy Christmas!";
@@ -51,8 +52,18 @@ snowGIF.style.zIndex = 3;
 snowGIF.style.marginLeft = "-32%";
 snowGIF.style.marginTop = "-35%";
 
+noelle.src = "Images/noelle-deltarune.gif";
+noelle.style.height = "50%";
+noelle.style.width = "50%";
+noelle.style.position = "relative";
+noelle.style.zIndex = 2;
+noelle.style.marginLeft = "0%";
+noelle.style.marginTop = "-35%"; 
+noelle.style.translate = "0% -130%";
+
 document.body.append(text);
 document.body.append(background);
 background.append(snowGIF);
+background.append(noelle);
 background.append(snowyBackground);
 
