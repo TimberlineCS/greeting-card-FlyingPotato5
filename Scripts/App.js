@@ -16,6 +16,11 @@ var snowyBackground =  document.createElement("div");
 var snowGIF = document.createElement("img");
 var noelle = document.createElement("img");
 var wind = new Audio("Music/Wind.mp3")
+var eventbutton =  document.createElement("div");
+// thank you chrome for making autoplay audio impossible
+var ralsei =  document.createElement("img");
+
+
 
 text.id = "coolfont";
 text.innerHTML = "Have a Snowy Christmas!";
@@ -62,7 +67,40 @@ noelle.style.marginLeft = "0%";
 noelle.style.marginTop = "-35%"; 
 noelle.style.translate = "0% -130%";
 
-wind.controls = true;
+eventbutton.style.width = "10%";
+eventbutton.style.height = "10%";
+eventbutton.style.backgroundColor = "red";
+eventbutton.style.outline = "5px";
+eventbutton.style.outlineColor = "dark-red";
+eventbutton.style.outlineStyle = "solid";
+eventbutton.style.position = "relative";
+eventbutton.style.translate = "0% -1060%";
+
+eventbutton.style.zIndex = 4;
+eventbutton.style.marginLeft = "120%";
+eventbutton.id = "event";
+
+
+ralsei.src = "Images/ralsei-dance.gif";
+ralsei.style.height = "50%";
+ralsei.style.width = "50%";
+ralsei.style.position = "relative";
+ralsei.style.zIndex = 2;
+ralsei.style.marginLeft = "0%";
+ralsei.style.marginTop = "-35%"; 
+ralsei.style.translate = "0% -130%";
+
+document.onclick= function(event) {
+    // Compensate for IE<9's non-standard event model
+    //
+    if (event===undefined) event= window.event;
+    var target= 'target' in event? event.target : event.srcElement;
+
+    wind.volume = 0.7;
+    wind.loop = true;
+    wind.play();
+};
+
 
 
 document.body.append(text);
@@ -71,4 +109,18 @@ document.body.append(wind);
 background.append(snowGIF);
 background.append(noelle);
 background.append(snowyBackground);
+background.append(eventbutton);
 
+document.getElementById("event").onclick= function(event) {
+    // Compensate for IE<9's non-standard event model
+    //
+    if (event===undefined) event= window.event;
+    var target= 'target' in event? event.target : event.srcElement;
+
+
+    wind.pause();
+    wind.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
+    background.remove(snowGIF);
+    background.remove(noelle);
+    background.remove(snowyBackground);
+};
