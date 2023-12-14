@@ -15,6 +15,7 @@ var background = document.createElement("div");
 var snowyBackground =  document.createElement("div");
 var snowGIF = document.createElement("img");
 var noelle = document.createElement("img");
+var wind = new Audio("Music/Wind.mp3")
 
 text.id = "coolfont";
 text.innerHTML = "Have a Snowy Christmas!";
@@ -61,8 +62,12 @@ noelle.style.marginLeft = "0%";
 noelle.style.marginTop = "-35%"; 
 noelle.style.translate = "0% -130%";
 
+wind.controls = true;
+
+
 document.body.append(text);
 document.body.append(background);
+document.body.append(wind);
 background.append(snowGIF);
 background.append(noelle);
 background.append(snowyBackground);
