@@ -15,11 +15,12 @@ var background = document.createElement("div");
 var snowyBackground =  document.createElement("div");
 var snowGIF = document.createElement("img");
 var noelle = document.createElement("img");
-var wind = new Audio("Music/Wind.mp3")
+var wind = new Audio("Music/Wind.mp3");
+var holidayjam = new Audio("Music/HolidayStudio.mp3");
 var eventbutton =  document.createElement("div");
 // thank you chrome for making autoplay audio impossible
 var ralsei =  document.createElement("img");
-
+var eventdebounce = false;
 
 
 text.id = "coolfont";
@@ -87,18 +88,32 @@ ralsei.style.width = "50%";
 ralsei.style.position = "relative";
 ralsei.style.zIndex = 2;
 ralsei.style.marginLeft = "0%";
-ralsei.style.marginTop = "-35%"; 
-ralsei.style.translate = "0% -130%";
+ralsei.style.marginTop = "30%"; 
+ralsei.style.translate = "50% -170%";
+ralsei.hidden = true;
 
+
+function unhideralsei() {
+ralsei.hidden = false;
+
+holidayjam.volume = 0.7;
+holidayjam.loop = true;
+holidayjam.play();
+
+}
+//stolen from website
 document.onclick= function(event) {
     // Compensate for IE<9's non-standard event model
     //
     if (event===undefined) event= window.event;
     var target= 'target' in event? event.target : event.srcElement;
-
-    wind.volume = 0.7;
-    wind.loop = true;
-    wind.play();
+    if(eventdebounce == false) {
+        console.log(eventdebounce);
+        wind.volume = 0.7;
+        wind.loop = true;
+        wind.play();
+    }
+  
 };
 
 
@@ -110,6 +125,7 @@ background.append(snowGIF);
 background.append(noelle);
 background.append(snowyBackground);
 background.append(eventbutton);
+background.append(ralsei);
 
 document.getElementById("event").onclick= function(event) {
     // Compensate for IE<9's non-standard event model
@@ -117,10 +133,16 @@ document.getElementById("event").onclick= function(event) {
     if (event===undefined) event= window.event;
     var target= 'target' in event? event.target : event.srcElement;
 
-
+    eventdebounce = true;
     wind.pause();
     wind.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
-    background.remove(snowGIF);
-    background.remove(noelle);
-    background.remove(snowyBackground);
+    snowGIF.hidden = true;
+    noelle.hidden = true;
+    eventbutton.hidden = true;
+    snowyBackground.style.backgroundColor = "#000";
+    snowyBackground.style.outline = "0px";
+
+    text.hidden = true;
+    document.body.style.backgroundColor  = "#000";
+    const myTimeout = setTimeout(unhideralsei, 1810);
 };
