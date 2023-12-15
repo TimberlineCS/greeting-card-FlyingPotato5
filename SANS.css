@@ -6,3 +6,14 @@
 #coolfont {
     font-family: Comic;
     }
+
+@keyframes example {
+  from {translate: 120% -670%;}
+  to {translate: 0% -470%;}
+}
+
+#green {
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}

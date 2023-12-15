@@ -22,7 +22,9 @@ var eventbutton =  document.createElement("div");
 // thank you chrome for making autoplay audio impossible
 var ralsei =  document.createElement("img");
 var eventdebounce = false;
-
+var triangle = document.createElement("div");
+var spotlightred = document.createElement("div");
+var spotlightgreen = document.createElement("div");
 
 text.id = "coolfont";
 text.innerHTML = "Have a Snowy Christmas!";
@@ -100,16 +102,56 @@ snowyBackground2.style.outline = "5px";
 snowyBackground2.style.outlineColor = "gray";
 snowyBackground2.style.outlineStyle = "solid";
 snowyBackground2.style.position = "relative";
-snowyBackground2.style.translate = "0% -130%";
+snowyBackground2.style.translate = "0% -380%";
 snowyBackground2.style.borderRadius = "50%";
 snowyBackground2.style.zIndex =  1;
 snowyBackground2.style.marginLeft = "-32%";
+
+triangle.style.border = "#285e01 solid 100px";
+triangle.style.position = "relative";
+triangle.style.translate = "110% -530%";
+//triangle.style.outline = "5px"
+//triangle.style.outlineColor = "#214a03";
+//triangle.style.outlineStyle = "solid";
+triangle.style.width = "0px";
+triangle.style.height = "0px";
+triangle.style.borderLeftColor = "transparent";
+triangle.style.borderRightColor = "transparent";
+triangle.style.borderTopColor = "transparent";
+document.body.append(triangle);
+
+spotlightred.style.width = "20%";
+spotlightred.style.height = "20%";
+spotlightred.style.backgroundColor = "red";
+spotlightred.style.opacity = 0.3;
+spotlightred.style.position = "relative";
+spotlightred.style.translate = "0% -670%";
+spotlightred.style.borderRadius = "50%";
+spotlightred.hidden = true;
+spotlightred.style.zIndex =  6;
+spotlightred.id = "red";
+
+spotlightgreen.style.width = "20%";
+spotlightgreen.style.height = "20%";
+spotlightgreen.style.backgroundColor = "green";
+spotlightgreen.hidden = true;
+spotlightgreen.style.opacity = 0.3;
+spotlightgreen.style.position = "relative";
+spotlightgreen.style.translate = "120% -670%";
+spotlightgreen.style.borderRadius = "50%";
+spotlightgreen.style.zIndex =  5;
+spotlightgreen.id = "green";
+//spotlight animations
+//nvm using css
 
 function unhideralsei() {
 ralsei.hidden = false;
 text.style.zIndex = 5;
 text.innerHTML = "Have a 8-bit Christmas!";
 snowyBackground.hidden = true;
+triangle.hidden = true;
+spotlightgreen.hidden = false;
+spotlightred.hidden = false;
 
 holidayjam.volume = 0.7;
 holidayjam.loop = true;
@@ -143,6 +185,9 @@ background.append(snowyBackground);
 background.append(eventbutton);
 background.append(ralsei);
 background.append(snowyBackground2);
+background.append(triangle);
+background.append(spotlightgreen);
+background.append(spotlightred);
 
 document.getElementById("event").onclick= function(event) {
     // Compensate for IE<9's non-standard event model
