@@ -8,12 +8,27 @@
     }
 
 @keyframes example {
-  from {translate: 120% -670%;}
-  to {translate: 0% -470%;}
+  0% {translate: 290% -670%;}
+  33% {translate: 0% -350%;}
+  66% {translate: 0% -350%;}
+  100% {translate: 290% -670%;}
+}
+
+@keyframes example2 {
+  0% {translate: 0% -670%;}
+  33% {translate: 350% -350%;}
+  66% {translate: 350% -350%;}
+  100% {translate: 0% -670%;}
 }
 
 #green {
   animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+#red {
+  animation-name: example2;
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
