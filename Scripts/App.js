@@ -88,13 +88,16 @@ ralsei.style.width = "50%";
 ralsei.style.position = "relative";
 ralsei.style.zIndex = 2;
 ralsei.style.marginLeft = "0%";
-ralsei.style.marginTop = "30%"; 
-ralsei.style.translate = "50% -170%";
+ralsei.style.marginTop = "30%";
+ralsei.style.translate = "50% -60%";
 ralsei.hidden = true;
 
 
 function unhideralsei() {
 ralsei.hidden = false;
+text.style.zIndex = 5;
+text.innerHTML = "Have a 8-bit Christmas!";
+snowyBackground.hidden = true;
 
 holidayjam.volume = 0.7;
 holidayjam.loop = true;
@@ -121,6 +124,7 @@ document.onclick= function(event) {
 document.body.append(text);
 document.body.append(background);
 document.body.append(wind);
+document.body.append(holidayjam);
 background.append(snowGIF);
 background.append(noelle);
 background.append(snowyBackground);
@@ -137,12 +141,13 @@ document.getElementById("event").onclick= function(event) {
     wind.pause();
     wind.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
     snowGIF.hidden = true;
+    console.log(snowGIF.hidden);
     noelle.hidden = true;
     eventbutton.hidden = true;
     snowyBackground.style.backgroundColor = "#000";
     snowyBackground.style.outline = "0px";
+    
 
-    text.hidden = true;
     document.body.style.backgroundColor  = "#000";
     const myTimeout = setTimeout(unhideralsei, 1810);
 };
