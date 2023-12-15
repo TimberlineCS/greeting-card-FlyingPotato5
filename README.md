@@ -53,7 +53,7 @@ If you click the red button, the text changes and  a new "animation" appears.
 That's a really funny question.... Wait are you being serious?
 
 
-In order to load you need to clone the repository and open index.html in any browser of choice. Or you could <a href="">use the live link.</a> In order to hear music you must click on the screen at least once. If you want to see the second screen, click on the red button
+In order to load you need to clone the repository and open index.html in any browser of choice. Or you could <a href="https://timberlinecs.github.io/greeting-card-FlyingPotato5/">use the live link.</a> In order to hear music you must click on the screen at least once. If you want to see the second screen, click on the red button
 
 ## Discussion
 
