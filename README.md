@@ -39,8 +39,11 @@ New ReadMe section:
 * Author: Connor Wing
 * Class: CSP Period 1
 * Semester: Winter 2023
+
 <i>who is this guy</i>
+
 <img src="https://media.tenor.com/C8MpzwDxl40AAAAM/ltg-low-tier-god.gif" width="150px">
+
 ## Overview
 
 This Webpage displays two animations that appear based on user input.

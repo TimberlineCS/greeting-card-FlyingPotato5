@@ -13,6 +13,7 @@ must also include text, an image, and music. */
 var text = document.createElement("div");
 var background = document.createElement("div");
 var snowyBackground =  document.createElement("div");
+var snowyBackground2 =  document.createElement("div");
 var snowGIF = document.createElement("img");
 var noelle = document.createElement("img");
 var wind = new Audio("Music/Wind.mp3");
@@ -92,6 +93,17 @@ ralsei.style.marginTop = "30%";
 ralsei.style.translate = "50% -60%";
 ralsei.hidden = true;
 
+snowyBackground2.style.width = "30%";
+snowyBackground2.style.height = "30%";
+snowyBackground2.style.backgroundColor = "#FFF";
+snowyBackground2.style.outline = "5px";
+snowyBackground2.style.outlineColor = "gray";
+snowyBackground2.style.outlineStyle = "solid";
+snowyBackground2.style.position = "relative";
+snowyBackground2.style.translate = "0% -130%";
+snowyBackground2.style.borderRadius = "50%";
+snowyBackground2.style.zIndex =  1;
+snowyBackground2.style.marginLeft = "-32%";
 
 function unhideralsei() {
 ralsei.hidden = false;
@@ -130,6 +142,7 @@ background.append(noelle);
 background.append(snowyBackground);
 background.append(eventbutton);
 background.append(ralsei);
+background.append(snowyBackground2);
 
 document.getElementById("event").onclick= function(event) {
     // Compensate for IE<9's non-standard event model
@@ -144,6 +157,7 @@ document.getElementById("event").onclick= function(event) {
     console.log(snowGIF.hidden);
     noelle.hidden = true;
     eventbutton.hidden = true;
+    snowyBackground2.hidden = true;
     snowyBackground.style.backgroundColor = "#000";
     snowyBackground.style.outline = "0px";
     
