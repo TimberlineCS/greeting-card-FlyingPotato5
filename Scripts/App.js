@@ -18,29 +18,29 @@ var snowGIF = document.createElement("img");
 var noelle = document.createElement("img");
 var wind = new Audio("Music/Wind.mp3");
 var holidayjam = new Audio("Music/HolidayStudio.mp3");
-var eventbutton =  document.createElement("div");
 // thank you chrome for making autoplay audio impossible
+var eventbutton =  document.createElement("div");
 var ralsei =  document.createElement("img");
 var eventdebounce = false;
 var triangle = document.createElement("div");
 var spotlightred = document.createElement("div");
 var spotlightgreen = document.createElement("div");
-
+//initialize everything
 text.id = "coolfont";
 text.innerHTML = "Have a Snowy Christmas!";
 text.style.backgroundColor = "black"
 text.style.color = "white";
 text.style.fontSize = "3em";
 text.style.textAlign = "center";
-
+//style text
 document.body.style.backgroundColor  = "#77d7f2";
 document.body.style.height = "100%";
 document.documentElement.style.height = "100%";
-
+//make background blue
 background.style.width = "60%";
 background.style.height = "100%";
 background.style.padding = "20%";//creates
-
+// div that all other elements are in
 snowyBackground.style.width = "163%";
 snowyBackground.style.height = "40%";
 snowyBackground.style.backgroundColor = "#FFF";
@@ -53,7 +53,7 @@ snowyBackground.style.translate = "0% -130%";
 snowyBackground.style.padding = "1%";
 snowyBackground.style.zIndex = 2;
 snowyBackground.style.marginLeft = "-32%";
-
+// style snowground
 snowGIF.src = "Images/FallingSnowTransparent.gif";
 snowGIF.style.height = "100%";
 snowGIF.style.width = "163%";
@@ -61,7 +61,7 @@ snowGIF.style.position = "relative";
 snowGIF.style.zIndex = 3;
 snowGIF.style.marginLeft = "-32%";
 snowGIF.style.marginTop = "-35%";
-
+//style snow gif
 noelle.src = "Images/noelle-deltarune.gif";
 noelle.style.height = "50%";
 noelle.style.width = "50%";
@@ -70,7 +70,7 @@ noelle.style.zIndex = 2;
 noelle.style.marginLeft = "0%";
 noelle.style.marginTop = "-35%"; 
 noelle.style.translate = "0% -130%";
-
+//style noelle gif
 eventbutton.style.width = "10%";
 eventbutton.style.height = "10%";
 eventbutton.style.backgroundColor = "red";
@@ -83,7 +83,7 @@ eventbutton.style.translate = "0% -1060%";
 eventbutton.style.zIndex = 4;
 eventbutton.style.marginLeft = "120%";
 eventbutton.id = "event";
-
+//style button
 
 ralsei.src = "Images/ralsei-dance.gif";
 ralsei.style.height = "50%";
@@ -94,7 +94,7 @@ ralsei.style.marginLeft = "0%";
 ralsei.style.marginTop = "30%";
 ralsei.style.translate = "50% -60%";
 ralsei.hidden = true;
-
+//style ralsei gif, set to hidden until the button is clicked
 snowyBackground2.style.width = "30%";
 snowyBackground2.style.height = "30%";
 snowyBackground2.style.backgroundColor = "#FFF";
@@ -106,7 +106,7 @@ snowyBackground2.style.translate = "0% -380%";
 snowyBackground2.style.borderRadius = "50%";
 snowyBackground2.style.zIndex =  1;
 snowyBackground2.style.marginLeft = "-32%";
-
+//styles snow hill
 triangle.style.border = "#285e01 solid 100px";
 triangle.style.position = "relative";
 triangle.style.translate = "110% -530%";
@@ -119,7 +119,7 @@ triangle.style.borderLeftColor = "transparent";
 triangle.style.borderRightColor = "transparent";
 triangle.style.borderTopColor = "transparent";
 document.body.append(triangle);
-
+//styles green triangle/mountain thingy
 spotlightred.style.width = "20%";
 spotlightred.style.height = "20%";
 spotlightred.style.backgroundColor = "red";
@@ -130,7 +130,7 @@ spotlightred.style.borderRadius = "50%";
 spotlightred.hidden = true;
 spotlightred.style.zIndex =  6;
 spotlightred.id = "red";
-
+//styles spotlight(s), set to hidden for now
 spotlightgreen.style.width = "20%";
 spotlightgreen.style.height = "20%";
 spotlightgreen.style.backgroundColor = "green";
@@ -152,11 +152,11 @@ snowyBackground.hidden = true;
 triangle.hidden = true;
 spotlightgreen.hidden = false;
 spotlightred.hidden = false;
-
+//changes text and unhides spotlights and ralsei
 holidayjam.volume = 0.7;
 holidayjam.loop = true;
 holidayjam.play();
-
+//plays audio
 }
 //stolen from website
 document.onclick= function(event) {
@@ -188,7 +188,7 @@ background.append(snowyBackground2);
 background.append(triangle);
 background.append(spotlightgreen);
 background.append(spotlightred);
-
+//append everything
 document.getElementById("event").onclick= function(event) {
     // Compensate for IE<9's non-standard event model
     //
@@ -196,6 +196,7 @@ document.getElementById("event").onclick= function(event) {
     var target= 'target' in event? event.target : event.srcElement;
 
     eventdebounce = true;
+    // so the wind sound effect can't play in the second screen
     wind.pause();
     wind.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
     snowGIF.hidden = true;
@@ -205,8 +206,9 @@ document.getElementById("event").onclick= function(event) {
     snowyBackground2.hidden = true;
     snowyBackground.style.backgroundColor = "#000";
     snowyBackground.style.outline = "0px";
-    
+    //hide everything and set the background to black
 
     document.body.style.backgroundColor  = "#000";
     const myTimeout = setTimeout(unhideralsei, 1810);
+    //unhide ralsei starts in 2 seconds
 };
