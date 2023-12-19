@@ -2,12 +2,6 @@
 //1
 //12/11/23
 
-/*This is a javascript christmas card*/
-
-/*Write code to create and manipulate the elements on the index.html page.  
-The elements must come to gether to resemble an image.  Your Greeting Card
-must also include text, an image, and music. */
-
 //This isn't a html class, it's actually a css class disguised as a javascript class.
 
 var text = document.createElement("div");
@@ -165,6 +159,7 @@ document.onclick= function(event) {
     if (event===undefined) event= window.event;
     var target= 'target' in event? event.target : event.srcElement;
     if(eventdebounce == false) {
+        //when the eventdebounce is set to true in the second screen the wind won't play anymore when you click on the screen
         console.log(eventdebounce);
         wind.volume = 0.7;
         wind.loop = true;
@@ -199,6 +194,7 @@ document.getElementById("event").onclick= function(event) {
     // so the wind sound effect can't play in the second screen
     wind.pause();
     wind.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
+    // sets the audio data to silent instead of just pausing it and leaving it there.
     snowGIF.hidden = true;
     console.log(snowGIF.hidden);
     noelle.hidden = true;
