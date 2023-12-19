@@ -1,7 +1,7 @@
 
 # Project 2: Greeting Card
 
-* Author: Connor Wing
+* Author: Connor Wing,,
 * Class: CSP Period 1
 * Semester: Winter 2023
 
